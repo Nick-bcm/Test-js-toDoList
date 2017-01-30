@@ -1,0 +1,17 @@
+﻿.done {
+    text-decoration: line-through;
+}
+
+.jobBtns {
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.doneBtn {
+    content: url(Res/tick.png);
+}
+
+.removeBtn {
+    content: url(Res/cross.png);
+}

@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="js.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Список дел</title>
+</head>
+<body>
+    <h1>Список дел</h1>
+    <!--<form>-->
+    <input type="checkbox" title="только не выполненые" id="filter" onclick="onFilter(this);" />
+    <label for="filter">только не выполненые</label>
+    <!--</form>-->
+    <ul id="toDoList"></ul>
+    <div>
+        <input type="text" value="" id="addText" onchange="text(this)" />
+        <input type="button" value="+" id="add" onclick="add(this);" />
+    </div>
+</body>
+</html>

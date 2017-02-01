@@ -1,4 +1,4 @@
-﻿var isFilter = false;
+var isFilter = false;
 var toDoList = [];
 var newJob = "";
 
@@ -12,6 +12,12 @@ function onFilter(e) {
 }
 
 function add() {
+    newJob = newJob.trim();
+    if (newJob.length == 0)
+    {
+        alert ("Введена пустая строка");
+        return false;
+    }
     toDoList[toDoList.length] = { toDo: newJob, isDone: false };
     newJob = "";
     document.querySelector("#addText").value = newJob;
@@ -50,12 +56,6 @@ function render() {
     }
     for (var i = 0; i < list.length; i++) {
         var job = list[i];
-        //var newLi = document.createElement('li');
-        //newLi.innerHTML = job.toDo;
-        //if (job.isDone) {
-        //    newLi.classList.add("done");
-        //}
-        //newLi.id = i;
         ul.appendChild(createLi(job, i));
     }
 }
@@ -69,15 +69,12 @@ function createLi(item, i) {
     newLi.id = 1;
 
     var doneBtn = document.createElement('a');
-    doneBtn.className += " doneBtn";
-    doneBtn.className += " jobBtns";
-    //doneBtn.onclick += "done(" + i + ");";
+    doneBtn.className += " jobBtns doneBtn";
     doneBtn.setAttribute("onclick", "done(" + i + ");");
     newLi.appendChild(doneBtn);
 
     var rem = document.createElement('a');
-    rem.className += " removeBtn";
-    rem.className += " jobBtns";
+    rem.className += " jobBtns removeBtn";
     rem.setAttribute("onclick", "remove(" + i + ");");
     newLi.appendChild(rem);
 
